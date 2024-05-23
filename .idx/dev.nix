@@ -25,6 +25,22 @@
     workspace = {
       onCreate = {
         deno-install = "curl -fsSL https://deno.land/install.sh | sh";
+        disable-extensions = ''
+          cat <<< \
+          $( \
+            jq \
+            '. += [{"identifier":{"id":"vscode.typescript-language-features"},"displayName":"TypeScript and JavaScript Language Features","disabled":true}]' \
+            /home/user/.codeoss-cloudworkstations/extensions/extensions.json \
+          ) \
+          > /home/user/.codeoss-cloudworkstations/extensions/extensions.json'';
+        modify-settings = ''
+          cat <<< \
+          $( \
+            jq \
+            '. += {"cloudDeveloperEnvironments.displayOpenVsxNotification": false}' \
+            /home/user/.codeoss-cloudworkstations/data/Machine/settings.json \
+          ) \
+          > /home/user/.codeoss-cloudworkstations/data/Machine/settings.json'';
       };
       onStart = {
       };
