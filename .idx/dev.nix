@@ -4,7 +4,7 @@
   channel = "stable-23.11";
   packages = [];
   env = {
-    DENO_INSTALL = "/home/user/.deno";
+    DENO_INSTALL = "/home/user/flutter";
   };
   idx = {
     extensions = [
@@ -17,6 +17,7 @@
     };
     workspace = {
       onCreate = {
+        deno-install = "curl -fsSL https://deno.land/install.sh | sh";
       };
       onStart = {
       };
