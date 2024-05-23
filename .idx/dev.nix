@@ -13,6 +13,13 @@
     previews = {
       enable = true;
       previews = {
+        web = {
+          command = ["deno" "run" "-A" "hello-world.ts"];
+          env = {
+            PORT = "$PORT";
+          };
+          manager = "web";
+        };
       };
     };
     workspace = {
