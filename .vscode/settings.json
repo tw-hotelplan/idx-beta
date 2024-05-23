@@ -1,5 +1,8 @@
 {
+    "deno.enable": true,
+    "editor.renderWhitespace": "all",
     "files.insertFinalNewline": true,
     "IDX.aI.enableCodebaseIndexing": false,
-    "IDX.aI.enableInlineCompletion": false
+    "IDX.aI.enableInlineCompletion": false,
+    "IDX.webDevTools": true
 }
