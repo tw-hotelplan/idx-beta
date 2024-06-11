@@ -2,7 +2,9 @@
 # see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   channel = "stable-23.11";
-  packages = [];
+  packages = [
+    "pkgs.openssh"
+  ];
   env = {
     DENO_INSTALL = "/home/user/flutter";
   };
@@ -26,7 +28,7 @@
       onCreate = {
         deno-install = "curl -fsSL https://deno.land/install.sh | sh";
         machine-settings = ''
-          jq -n '{"cloudDeveloperEnvironments.displayOpenVsxNotification": false}' \
+          jq -n '{"cloudDeveloperEnvironments.displayOpenVsxNotification": false, "deno.path": "/home/user/flutter/bin/deno"}' \
           > /home/user/.codeoss-cloudworkstations/data/Machine/settings.json'';
       };
       onStart = {
