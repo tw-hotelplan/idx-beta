@@ -2,7 +2,6 @@
     "debug.toolBarLocation": "hidden",
     "deno.enable": true,
     "deno.lint": true,
-    "deno.path": "/home/user/flutter/bin/deno",
     "IDX.aI.enableCodebaseIndexing": false,
     "IDX.aI.enableInlineCompletion": false,
     "IDX.webDevTools": true,
